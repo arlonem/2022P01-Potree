@@ -151,16 +151,6 @@
 			dragEnter, dragOver, dragLeave, dropHandler,
 		} from "./src/desktop.js";
 
-		{
-			// open links in the standard browser instead of electron
-			// see https://github.com/electron/electron/issues/1344
-			const shell = require('electron').shell;
-			$(document).on('click', 'a[href^="http"]', function(event) {
-				event.preventDefault();
-				shell.openExternal(this.href);
-			});
-		}
-
 		let elBody = document.body;
 
 		elBody.addEventListener("dragenter", dragEnter, false);
